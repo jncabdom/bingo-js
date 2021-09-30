@@ -44,6 +44,7 @@ const startGame = () => {
 }
 
 const restartGame = () => {
+  document.querySelector(".turn-button").classList.toggle("inactive");
   playerCards = [];
   document.querySelectorAll(".card-number").forEach(number => number.remove());
   BALLTEXT.innerHTML = "?";
@@ -82,6 +83,7 @@ const checkWinConditions = () => {
   if (winCondition > 0) {
     mustReset = true;
     WINTEXT.classList.toggle("inactive");
+    document.querySelector(".turn-button").classList.toggle("inactive");
   }
     
 }

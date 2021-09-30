@@ -14,7 +14,7 @@ h2 {
   color: red;
 }
 
-h2.inactive {
+.inactive {
   display: none;
 }
 
