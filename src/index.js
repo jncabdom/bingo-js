@@ -45,7 +45,7 @@ const startGame = () => {
 }
 
 const restartGame = () => {
-  if (!TURNBUTTON.classList.contains("inactive")) TURNBUTTON.classList.toggle("inactive");
+  if (TURNBUTTON.classList.contains("inactive")) TURNBUTTON.classList.toggle("inactive");
   playerCards = [];
   document.querySelectorAll(".card-number").forEach(number => number.remove());
   BALLTEXT.innerHTML = "?";
