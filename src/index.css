@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+.content {
+  background-color: ghostwhite;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.bingo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 90%;
+  height: 25rem;
+  border: 0.6rem solid black;
+  border-radius: 2rem;
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.start-button {
+  width: 15rem;
+  height: 6rem;
+  font-size: 2rem;
+  margin-top: 1rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  border: 0.19rem solid black;
+  border-radius: 1.15rem;
+  background-color: ghostwhite;
+  color: black;
+}
+
+.start-button:hover {
+  background-color: darkgray;
+  color: white;
+}
+
+.start-button:active {
+  background-color: #282c34;
+  color: white;
+}
+
+.player-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.player-card {
+  background-color: #fff;
+  background-image: url("https://www.transparenttextures.com/patterns/cardboard.png");
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 0.4rem;
+  width: 15rem;
+  height: 12rem;
+  border: 2px solid black;
+}
+
+.card-number {
+  text-align: center;
+  width: 1.8rem;
+  margin: 0 0.3rem;
+  border: 0.1rem solid black;
+}
+
+.card-number.found {
+  color: red;
+}
+
+.bingo-ball {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  border: 0.1rem solid black;
+  background-color: ghostwhite;
+  box-shadow: inset -5px -5px 5px rgba(0, 0, 0, 0.6);
+}
+
+.bingo-ball-text {
+  font-size: 8rem;
+}
