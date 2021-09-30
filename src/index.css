@@ -9,6 +9,15 @@ h1 {
   font-size: 4rem;
 }
 
+h2 {
+  font-size: 2rem;
+  color: red;
+}
+
+h2.inactive {
+  display: none;
+}
+
 .content {
   background-color: ghostwhite;
   height: 100vh;
