@@ -5,6 +5,7 @@ const NUMSPERCARD = 15;
 
 const BALLTEXT = document.querySelector(".bingo-ball-text");
 const WINTEXT = document.querySelector(".win-text");
+const TURNBUTTON = document.querySelector(".turn-button");
 
 let allNumbers;
 let playerCards = [];
@@ -44,7 +45,7 @@ const startGame = () => {
 }
 
 const restartGame = () => {
-  document.querySelector(".turn-button").classList.toggle("inactive");
+  if (!TURNBUTTON.classList.contains("inactive")) TURNBUTTON.classList.toggle("inactive");
   playerCards = [];
   document.querySelectorAll(".card-number").forEach(number => number.remove());
   BALLTEXT.innerHTML = "?";
@@ -83,10 +84,10 @@ const checkWinConditions = () => {
   if (winCondition > 0) {
     mustReset = true;
     WINTEXT.classList.toggle("inactive");
-    document.querySelector(".turn-button").classList.toggle("inactive");
+    TURNBUTTON.classList.toggle("inactive");
   }
     
 }
 
 document.querySelector(".start-button").addEventListener("click", startGame);
-document.querySelector(".turn-button").addEventListener("click", newTurn);
+TURNBUTTON.addEventListener("click", newTurn);
