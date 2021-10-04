@@ -45,6 +45,7 @@ const startGame = () => {
 }
 
 const restartGame = () => {
+  mustReset = false;
   if (TURNBUTTON.classList.contains("inactive")) TURNBUTTON.classList.toggle("inactive");
   playerCards = [];
   document.querySelectorAll(".card-number").forEach(number => number.remove());
@@ -67,7 +68,6 @@ const newTurn = () => {
 const checkWinConditions = () => {
   const winCondition = ((playerCards[0].length === 0) ? 1 : 0) +
                        ((playerCards[1].length === 0) ? 2 : 0);
-  console.log(winCondition);
   switch (winCondition) {
     case 1:
       WINTEXT.innerHTML = "Player 1 wins! Please restart the game."
