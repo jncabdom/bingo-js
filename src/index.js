@@ -11,13 +11,8 @@ let allNumbers;
 let playerCards = [];
 let mustReset = false;
 
-const createCard = () => {
-  allNumbers = _.shuffle(allNumbers);
-  return allNumbers.slice(0, NUMSPERCARD);
-}
-
 const getRandomNumberBetween = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1) + min);
+Math.floor(Math.random() * (max - min + 1) + min);
 
 const generateCards = () => {
   const cards = document.querySelectorAll(".player-card");
@@ -28,6 +23,11 @@ const generateCards = () => {
       addNumberToCard(number, card);
     }
   });
+}
+
+const createCard = () => {
+  allNumbers = _.shuffle(allNumbers);
+  return allNumbers.slice(0, NUMSPERCARD);
 }
 
 const addNumberToCard = (number, card) => {
@@ -60,7 +60,9 @@ const newTurn = () => {
     BALLTEXT.innerHTML = (turnNumber < 10) ? "0" + turnNumber : turnNumber;
     const foundNumbers = document.querySelectorAll(`.number${turnNumber}`);
     foundNumbers.forEach(foundNumber => foundNumber.classList.toggle("found"));
-    playerCards.forEach(card => { if (card.includes(turnNumber)) card.splice(card.indexOf(turnNumber), 1) });
+    playerCards.forEach(card => {
+      if (card.includes(turnNumber)) card.splice(card.indexOf(turnNumber), 1)
+    });
     checkWinConditions();
   }
 }
